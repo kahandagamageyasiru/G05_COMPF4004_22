@@ -9,3 +9,8 @@
 - Name : Mohamed Ithhaf Mohamed Dhanish
 - Email : CB009562@students.apiit.lk
 - Contact No : 0769299123
+
+## Member 3
+-Name : Navidu Nimtharu Perera
+-Email : cb009429@students.apiit.lk
+-Contact No : 0771705444
