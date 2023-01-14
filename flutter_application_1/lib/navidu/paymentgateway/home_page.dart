@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stripe_payment_integration/pages/payment_controller.dart';
+import 'package:flutter_application_1/navidu/payment_controller.dart';
+
 
 
 class HomePage extends StatelessWidget {
