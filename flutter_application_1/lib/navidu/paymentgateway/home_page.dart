@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/navidu/payment_controller.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/payment_controller.dart';
 
 
 
