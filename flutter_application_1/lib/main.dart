@@ -7,9 +7,7 @@ import 'package:flutter_application_1/yasiru/2/home_page.dart';
 import 'package:flutter_application_1/navidu/paymentgateway/subscription_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  Stripe.publishableKey =
-      'pk_test_51METG3ICA2rU3MeJBVdiGDYNqmDVW1xgZuAvSIUOOwjTfeMovOyvm8JXGd1d8x1IDER8vYcSuTYzo4eJegiIGcD600Bueqh81r';
+
   runApp(
     MultiProvider(
       providers: [
@@ -36,7 +34,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
