@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/credit_card_page.dart';
 
 
 class SubscriptionPage extends StatelessWidget {
@@ -33,22 +34,41 @@ class SubscriptionPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 24)),
             const SizedBox(height: 20),
+
             ElevatedButton(
-              onPressed: , 
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CreditCardPage(),
+                ));
+              }, 
               child: const Text(
                 'Basic',
                 style: TextStyle(color: Colors.black, fontSize: 15)
                 )),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: , 
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CreditCardPage(),
+                ));
+              },  
               child: const Text(
                 'Premium',
                 style: TextStyle(color: Colors.black, fontSize: 15)
                 )),
             const SizedBox(height: 20),
            ElevatedButton(
-              onPressed: , 
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CreditCardPage(),
+                ));
+              },  
               child: const Text(
                 'Pro',
                 style: TextStyle(color: Colors.black, fontSize: 15)
