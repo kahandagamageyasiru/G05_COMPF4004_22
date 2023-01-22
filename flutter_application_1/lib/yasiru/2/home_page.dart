@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/yasiru/2/utill/excercisetyp.dart';
 import 'package:flutter_application_1/yasiru/2/utill/coffee_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/yasiru/1/home_page.dart';
+import 'package:flutter_application_1/yasiru/home_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage2 extends StatefulWidget {
+  const HomePage2({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage2> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage2> {
   final List excercisetyp = [
     [
       'Bridge',
@@ -49,7 +51,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Icon(Icons.menu),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
@@ -57,6 +68,31 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage1()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage3()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
@@ -129,7 +165,8 @@ class _HomePageState extends State<HomePage> {
                 excerciseTime: '120 seconds',
               ),
               CoffeTile(
-                excerciseImagePath: 'assets/images/Side-lying hip abduction.gif',
+                excerciseImagePath:
+                    'assets/images/Side-lying hip abduction.gif',
                 excerciseName: 'lying hip abduction',
                 excerciseDescription:
                     'Helps the hips and knee area of your body.',

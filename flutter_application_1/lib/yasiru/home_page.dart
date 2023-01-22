@@ -3,14 +3,14 @@ import 'package:flutter_application_1/yasiru/utill/excercise_tile.dart';
 import 'package:flutter_application_1/yasiru/utill/excercisetyp.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage3 extends StatefulWidget {
+  const HomePage3({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage3> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage3> {
   final List excercisetyp = [
     [
       'bent-knee triceps dips',

@@ -3,6 +3,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/providers/user_provider.dart';
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_application_1/yasiru/2/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: HomePage2(),
     );
   }
 }

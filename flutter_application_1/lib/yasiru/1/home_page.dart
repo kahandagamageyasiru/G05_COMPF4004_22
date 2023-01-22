@@ -3,14 +3,14 @@ import 'package:flutter_application_1/yasiru/1/utill/excercise_tile.dart';
 import 'package:flutter_application_1/yasiru/utill/excercisetyp.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage1 extends StatefulWidget {
+  const HomePage1({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage1> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage1> {
   final List excercisetyp = [
     [
       'bear crawl',
