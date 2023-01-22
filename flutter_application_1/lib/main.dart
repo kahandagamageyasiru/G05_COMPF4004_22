@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_node_auth/providers/user_provider.dart';
-import 'package:flutter_node_auth/screens/home_screen.dart';
-import 'package:flutter_node_auth/screens/signup_screen.dart';
-import 'package:flutter_node_auth/screens/splash_screen.dart';
-import 'package:flutter_node_auth/services/auth_services.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/providers/user_provider.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_node_auth/screens/admin.dart';
 
 void main() {
   runApp(
