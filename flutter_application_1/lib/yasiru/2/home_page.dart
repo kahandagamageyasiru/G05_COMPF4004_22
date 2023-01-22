@@ -115,35 +115,35 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.horizontal,
             children: [
               CoffeTile(
-                excerciseImagePath: 'lib/images/Knee pushup.gif',
+                excerciseImagePath: 'assets/images/Knee pushup.gif',
                 excerciseName: 'Knee pushup',
                 excerciseDescription:
                     'From is you can get chest, shoulders and arms a quality workout',
                 excerciseTime: '10 times',
               ),
               CoffeTile(
-                excerciseImagePath: 'lib/images/Bicycle crunch.gif',
+                excerciseImagePath: 'assets/images/Bicycle crunch.gif',
                 excerciseName: 'Bicycle crunch',
                 excerciseDescription:
                     'It helps you to engage a wide range of muscle groups.',
                 excerciseTime: '120 seconds',
               ),
               CoffeTile(
-                excerciseImagePath: 'lib/images/Side-lying hip abduction.gif',
+                excerciseImagePath: 'assets/images/Side-lying hip abduction.gif',
                 excerciseName: 'lying hip abduction',
                 excerciseDescription:
                     'Helps the hips and knee area of your body.',
                 excerciseTime: '20 times',
               ),
               CoffeTile(
-                excerciseImagePath: 'lib/images/Bridge.gif',
+                excerciseImagePath: 'assets/images/Bridge.gif',
                 excerciseName: 'Bridge',
                 excerciseDescription:
                     'A bridge exercise isolates and strengthens your gluteus (butt) muscles.',
                 excerciseTime: '20 times',
               ),
               CoffeTile(
-                excerciseImagePath: 'lib/images/Stationary lunge.gif',
+                excerciseImagePath: 'assets/images/Stationary lunge.gif',
                 excerciseName: 'Stationary lunge',
                 excerciseDescription:
                     'Stationary lunges target your glutes, quadriceps, and hamstrings.',
