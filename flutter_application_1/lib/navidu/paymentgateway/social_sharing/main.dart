@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'social_sharing_coach.dart';
+import 'social_sharing_member.dart';
 
 void main() {
   runApp(const MyApp());
