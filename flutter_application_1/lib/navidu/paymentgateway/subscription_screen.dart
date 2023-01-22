@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stripe_payment_integration/pages/payment_controller.dart';
+import 'payment_controller.dart';
 
 class SubscriptionPage extends StatelessWidget {
   const SubscriptionPage({Key? key}) : super(key: key);
