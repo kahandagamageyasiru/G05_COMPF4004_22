@@ -3,7 +3,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_application_1/social_sharing_coach.dart';
+import 'social_sharing_coach.dart';
 
 class MessagesListScreen extends StatefulWidget {
   const MessagesListScreen({super.key});
@@ -68,6 +68,7 @@ class _MessagesListScreen extends State<MessagesListScreen> {
   }
 }
 
+// A constructor that takes required parameter message and convert jason objects into and instance of the Allmessages.
 class Allmessages {
   String message;
 
