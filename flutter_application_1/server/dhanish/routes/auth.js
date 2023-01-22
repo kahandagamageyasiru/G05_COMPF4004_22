@@ -1,12 +1,12 @@
 const express = require("express");
 const bcryptjs = require("bcryptjs");
 const User = require("../models/user");
-const authRouter = express.Router();
+const dhanishrouter = express.Router();
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 
 // Sign Up
-authRouter.post("/api/signup", async (req, res) => {
+dhanishrouter.post("/api/signup", async (req, res) => {
   try {
     const { name, email, password, usertype } = req.body;
 
@@ -35,7 +35,7 @@ authRouter.post("/api/signup", async (req, res) => {
 
 // Admin page
 // Sending user details to admin frontend
-authRouter.get('/api/userdetails', async (req, res) => {
+dhanishrouter.get('/api/userdetails', async (req, res) => {
   User.find()
     .then(user => {
       res.json(user);
@@ -92,7 +92,7 @@ authRouter.get('/api/userdetails', async (req, res) => {
 
 
 
-authRouter.post("/api/signin", async (req, res) => {
+dhanishrouter.post("/api/signin", async (req, res) => {
   try {
     const { email, password /*usertype*/ } = req.body;
 
@@ -121,7 +121,7 @@ authRouter.post("/api/signin", async (req, res) => {
 });
 
 // return usertype
-authRouter.get("/api/getusertype", async (req, res) => {
+dhanishrouter.get("/api/getusertype", async (req, res) => {
   try {
     const user = await User.findOne({email: req.query.email});
     if(!user) {
@@ -135,7 +135,7 @@ authRouter.get("/api/getusertype", async (req, res) => {
 
 // Deleting user as an admin
 
-authRouter.delete("/api/userdelete/:email", (req, res) => {
+dhanishrouter.delete("/api/userdelete/:email", (req, res) => {
   User.findOneAndDelete({email: req.params.email})
     .then(user => {
         if(!user) {
@@ -150,7 +150,7 @@ authRouter.delete("/api/userdelete/:email", (req, res) => {
 
 // Editing user as an admin
 
-authRouter.patch('/api/userupdate', (req, res) => {
+dhanishrouter.patch('/api/userupdate', (req, res) => {
   const { id, email, name } = req.body;
   User.updateOne({ _id: id }, { $set: { name: name, email: email } }, (err, result) => {
     if (err) {
@@ -162,7 +162,7 @@ authRouter.patch('/api/userupdate', (req, res) => {
 
 
 
-authRouter.post("/tokenIsValid", async (req, res) => {
+dhanishrouter.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");
     if (!token) return res.json(false);
@@ -178,9 +178,9 @@ authRouter.post("/tokenIsValid", async (req, res) => {
 });
 
 // get user data
-authRouter.get("/", auth, async (req, res) => {
+dhanishrouter.get("/", auth, async (req, res) => {
   const user = await User.findById(req.user);
   res.json({ ...user._doc, token: req.token });
 });
 
-module.exports = authRouter;
+module.exports = dhanishrouter;
