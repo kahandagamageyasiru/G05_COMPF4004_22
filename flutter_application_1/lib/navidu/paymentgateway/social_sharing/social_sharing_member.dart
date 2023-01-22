@@ -68,7 +68,6 @@ class _MessagesListScreen extends State<MessagesListScreen> {
   }
 }
 
-//Class converts jason objects into an instance of the Allmessages and has constructor which takes the message parameter.
 class Allmessages {
   String message;
 

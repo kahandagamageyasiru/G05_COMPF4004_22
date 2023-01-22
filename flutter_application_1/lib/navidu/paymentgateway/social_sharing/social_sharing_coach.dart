@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_application_1/social_sharing_member.dart';
 
-
 class coachmessageScreen extends StatefulWidget {
   @override
   _MessageScreenState createState() => _MessageScreenState();
@@ -30,7 +29,34 @@ class _MessageScreenState extends State<coachmessageScreen> {
           fontSize: 23.0,
           fontWeight: FontWeight.bold,
         ),
+         leading: IconButton(
+        icon: Icon(Icons.menu),
+        onPressed: () {
+            Scaffold.of(context).openDrawer();
+        },
+    ),
+),
+      drawer: Drawer(
+          child: ListView(
+              children: [
+                  ListTile(
+                      title: Text("Menu Item 1"),
+                      onTap: () {
+                          //Add code for the action when menu item 1 is pressed
+                      },
+                  ),
+                  ListTile(
+                      title: Text("Menu Item 2"),
+                      onTap: () {
+                          //Add code for the action when menu item 2 is pressed
+                      },
+                  ),
+                  // Add more menu items here if needed
+              ],
+          ),
       ),
+  
+
       body: Container(
         color: Colors.black,
       child: Column(
@@ -82,8 +108,6 @@ class _MessageScreenState extends State<coachmessageScreen> {
   }
 }
 
-
-// The asynchronous function to send the messeage
 Future<void> sendMessage(String message) async {
   final response = await http.post(
     Uri.parse("http://10.0.2.2:5000/message"),
