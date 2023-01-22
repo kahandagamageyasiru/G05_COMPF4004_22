@@ -41,10 +41,8 @@ class _CreditCardPageState extends State<CreditCardPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            exit(0);
-            // Navigator.push(context,
-            // MaterialPageRoute(builder: (context) => CreditCardPage()));
-          },
+              Navigator.pop(context);
+            },
         ),
       ),
 

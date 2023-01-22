@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/yasiru/1/home_page.dart';
 import 'package:flutter_application_1/yasiru/home_page.dart';
 import 'package:flutter_application_1/navidu/paymentgateway/social_sharing/social_sharing_member.dart';
-import 'package:flutter_application_1/navidu/paymentgateway/subscription_screen.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/subscription_plan.dart';
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/signup_screen.dart';
 import 'package:flutter_application_1/yasiru/notes/notes.dart';
 
