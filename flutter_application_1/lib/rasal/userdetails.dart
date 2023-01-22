@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_application_1/yasiru/2/home_page.dart';
 
 class userdetailsform extends StatefulWidget {
   @override
@@ -64,10 +65,10 @@ class userdetailsformstate extends State<userdetailsform> {
                     ElevatedButton(
                       onPressed: () {
                         submitForm();
-                        Navigator.push(context, 
-                        MaterialPageRoute(
-                          builder: (context) => )
-                        )
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFCB040),
