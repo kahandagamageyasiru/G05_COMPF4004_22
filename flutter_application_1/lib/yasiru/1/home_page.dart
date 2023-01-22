@@ -6,6 +6,7 @@ import 'package:flutter_application_1/yasiru/2/home_page.dart';
 import 'package:flutter_application_1/yasiru/home_page.dart';
 import 'package:flutter_application_1/navidu/paymentgateway/social_sharing/social_sharing_member.dart';
 import 'package:flutter_application_1/navidu/paymentgateway/subscription_screen.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/signup_screen.dart';
 
 
 class HomePage1 extends StatefulWidget {
@@ -65,9 +66,13 @@ class _HomePageState extends State<HomePage1> {
           }
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: Icon(Icons.person),
+          IconButton(
+            icon: const Icon(Icons.exit_to_app, color: Colors.orange),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SignupScreen()));
+            },
           ),
         ],
       ),

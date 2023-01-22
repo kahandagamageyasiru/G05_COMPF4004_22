@@ -30,11 +30,11 @@ class _MessageScreenState extends State<coachmessageScreen> {
           fontWeight: FontWeight.bold,
         ),
          leading: IconButton(
-        icon: Icon(Icons.menu),
-        onPressed: () {
-            Scaffold.of(context).openDrawer();
-        },
-    ),
+            icon: const Icon(Icons.exit_to_app, color: Colors.orange),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
 ),
       body: Container(
         color: Colors.black,
