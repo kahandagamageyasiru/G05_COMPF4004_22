@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/utill/coffee_tile.dart';
-import 'package:flutter_application_8/utill/excercisetyp.dart';
+import 'package:flutter_application_1/yasiru/2/utill/excercisetyp.dart';
+import 'package:flutter_application_1/yasiru/2/utill/coffee_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
