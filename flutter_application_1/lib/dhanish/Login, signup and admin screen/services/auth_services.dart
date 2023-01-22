@@ -12,6 +12,7 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/admin.dart';
+import 'package:flutter_application_1/rasal/userdetails.dart';
 
 /*Future<String> getUserType(usertype) async {
   final response = await http.post(
@@ -160,7 +161,7 @@ class AuthService {
           if (userType == 'member') {
             navigator.pushAndRemoveUntil(
               MaterialPageRoute(
-                builder: (context) => const HomeScreen(),
+                builder: (context) => userdetailsform(),
               ),
               (route) => false,
             );
