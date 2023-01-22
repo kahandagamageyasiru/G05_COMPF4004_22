@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dhanishrouter = require("./dhanish/routes/auth");
 const navidurouter = require("./Navidu/msg_req_res");
 const rasalrouter = require("./rasal/userdetails_req_res");
+const yasirurouter = require("./yasiru/notes_req_res")
 
 mongoose.set("strictQuery", false);
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(dhanishrouter);
 app.use(navidurouter);
 app.use(rasalrouter);
+app.use(yasirurouter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
