@@ -29,6 +29,14 @@ class _MessagesListScreen extends State<MessagesListScreen> {
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         title: const Text('Social Sharing Member Page'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.exit_to_app, color: Colors.orange),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
         titleTextStyle: const TextStyle(
           color: Colors.orange,
           fontSize: 23.0,

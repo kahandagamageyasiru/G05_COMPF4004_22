@@ -4,6 +4,8 @@ import 'package:flutter_application_1/yasiru/2/utill/coffee_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/yasiru/1/home_page.dart';
 import 'package:flutter_application_1/yasiru/home_page.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/social_sharing/social_sharing_member.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/subscription_screen.dart';
 
 class HomePage2 extends StatefulWidget {
   const HomePage2({Key? key}) : super(key: key);
@@ -113,6 +115,30 @@ class _HomePageState extends State<HomePage2> {
                   );
                 },
               ),
+              ListTile(
+              title: Text('Member Social Sharing',
+              style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold),),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MessagesListScreen()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Subscription Plan',
+              style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold),),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SubscriptionPage()),
+                );
+              },
+            ),
             ],
           ),
         ),

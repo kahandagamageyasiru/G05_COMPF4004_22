@@ -4,6 +4,9 @@ import 'package:flutter_application_1/yasiru/utill/excercisetyp.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/yasiru/2/home_page.dart';
 import 'package:flutter_application_1/yasiru/home_page.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/social_sharing/social_sharing_member.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/subscription_screen.dart';
+
 
 class HomePage1 extends StatefulWidget {
   const HomePage1({Key? key}) : super(key: key);
@@ -73,29 +76,66 @@ class _HomePageState extends State<HomePage1> {
         child: ListView(
           children: [
             ListTile(
-              title: Text('Beginner Workout'),
+                title: Text(
+                  'Beginner Workout',
+                  style: TextStyle(color: Colors.white,
+                   fontSize: 17, 
+                   fontWeight: FontWeight.bold),
+                  ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage2()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Intermediate Workout',
+                style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold
+                ),),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage3()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Advance Workout',
+                style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold
+                ),),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage1()),
+                  );
+                },
+              ),
+              ListTile(
+              title: Text('Member Social Sharing',
+              style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold),),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage2()),
+                  MaterialPageRoute(builder: (context) => MessagesListScreen()),
                 );
               },
             ),
             ListTile(
-              title: Text('Intermediate Workout'),
+              title: Text('Subscription Plan',
+              style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold),),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage3()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Advance Workout'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage1()),
+                  MaterialPageRoute(builder: (context) => SubscriptionPage()),
                 );
               },
             ),
