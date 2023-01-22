@@ -92,18 +92,11 @@ class _HomePageState extends State<HomePage3> {
       ),
 
        drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('Beginner Workout'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage2()),
-                );
-              },
-            ),
-            ListTile(
+        child: Container(
+          color: Colors.black,
+          child: ListView(
+            children: [
+              ListTile(
                 title: Text(
                   'Beginner Workout',
                   style: TextStyle(color: Colors.white,
@@ -167,7 +160,8 @@ class _HomePageState extends State<HomePage3> {
                 );
               },
             ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(items: [
