@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'payment_controller.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/payment_controller.dart';
 
 class SubscriptionPage extends StatelessWidget {
   const SubscriptionPage({Key? key}) : super(key: key);

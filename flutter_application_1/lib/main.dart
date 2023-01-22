@@ -4,6 +4,8 @@ import 'package:flutter_application_1/dhanish/Login, signup and admin screen/pro
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_application_1/yasiru/2/home_page.dart';
+import 'package:flutter_application_1/navidu/paymentgateway/subscription_screen.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
