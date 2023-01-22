@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/utill/excercisetyp.dart';
+import 'package:flutter_application_1/yasiru/2/utill/excercisetyp.dart';
 
 class CoffeTile extends StatelessWidget {
   final String excerciseImagePath;
