@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_node_auth/custom_textfield.dart';
-import 'package:flutter_node_auth/screens/login_screen.dart';
-import 'package:flutter_node_auth/services/auth_services.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/custom_textfield.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/login_screen.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/services/auth_services.dart';
 
 enum Options { coach, member }
 

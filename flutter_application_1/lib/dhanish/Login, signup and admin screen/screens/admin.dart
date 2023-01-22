@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:flutter_node_auth/utils/constants.dart';
-import 'package:flutter_node_auth/services/auth_services.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/utils/constants.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/services/auth_services.dart';
 
 class adminpage extends StatefulWidget {
   const adminpage({super.key});

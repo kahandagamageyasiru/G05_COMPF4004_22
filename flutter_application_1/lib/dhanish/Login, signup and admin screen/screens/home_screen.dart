@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_node_auth/providers/user_provider.dart';
-import 'package:flutter_node_auth/services/auth_services.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/providers/user_provider.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/services/auth_services.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {

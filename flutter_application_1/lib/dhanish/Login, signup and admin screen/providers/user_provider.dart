@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_node_auth/models/user.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/models/user.dart';
 
 class UserProvider extends ChangeNotifier {
   User _user = User(

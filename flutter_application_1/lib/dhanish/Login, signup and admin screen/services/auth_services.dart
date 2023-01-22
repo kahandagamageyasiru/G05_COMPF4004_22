@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_node_auth/models/user.dart';
-import 'package:flutter_node_auth/providers/user_provider.dart';
-import 'package:flutter_node_auth/screens/coach-home.dart';
-import 'package:flutter_node_auth/screens/home_screen.dart';
-import 'package:flutter_node_auth/screens/signup_screen.dart';
-import 'package:flutter_node_auth/utils/constants.dart';
-import 'package:flutter_node_auth/utils/utils.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/models/user.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/providers/user_provider.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/signup_screen.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/coach-home.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/home_screen.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/utils/constants.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/utils/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_node_auth/screens/admin.dart';
+import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/admin.dart';
 
 /*Future<String> getUserType(usertype) async {
   final response = await http.post(
