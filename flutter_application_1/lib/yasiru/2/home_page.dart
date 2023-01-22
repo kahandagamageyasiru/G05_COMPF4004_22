@@ -69,27 +69,52 @@ class _HomePageState extends State<HomePage2> {
         ],
       ),
       drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('Home'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage1()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Settings'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage3()),
-                );
-              },
-            ),
-          ],
+        child: Container(
+          color: Colors.black,
+          child: ListView(
+            children: [
+              ListTile(
+                title: Text(
+                  'Beginner Workout',
+                  style: TextStyle(color: Colors.white,
+                   fontSize: 17, 
+                   fontWeight: FontWeight.bold),
+                  ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage2()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Intermediate Workout',
+                style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold
+                ),),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage3()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Advance Workout',
+                style: TextStyle(color: Colors.white, 
+                fontSize: 17,
+                fontWeight: FontWeight.bold
+                ),),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage1()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
 

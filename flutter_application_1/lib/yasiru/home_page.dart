@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/yasiru/utill/excercise_tile.dart';
 import 'package:flutter_application_1/yasiru/utill/excercisetyp.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/yasiru/1/home_page.dart';
+import 'package:flutter_application_1/yasiru/2/home_page.dart';
+
 
 class HomePage3 extends StatefulWidget {
   const HomePage3({Key? key}) : super(key: key);
@@ -69,13 +72,56 @@ class _HomePageState extends State<HomePage3> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Icon(Icons.menu),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: Icon(Icons.person),
           ),
         ],
+      ),
+
+       drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text('Beginner Workout'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage2()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Intermediate Workout'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage3()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Advance Workout'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage1()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
@@ -135,35 +181,35 @@ class _HomePageState extends State<HomePage3> {
             scrollDirection: Axis.horizontal,
             children: [
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/Pushup.gif',
+                excerciseImagePath: 'assets/images/Pushup.gif',
                 excerciseName: 'Pushup',
                 excerciseDescription:
                     'You can start with 20 push-ups, but do not stick to this number. It is important to keep increasing the number to challenge your body.',
                 excerciseTime: '20-100times',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/secondplank.gif',
+                excerciseImagePath: 'assets/images/secondplank.gif',
                 excerciseName: 'secondplank',
                 excerciseDescription:
                     'This strengthens your back, chest, shoulders, neck, and abs',
                 excerciseTime: '2mins',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/bent-knee triceps dips.gif',
+                excerciseImagePath: 'assets/images/bent-knee triceps dips.gif',
                 excerciseName: 'bent-knee triceps dips',
                 excerciseDescription:
                     'tricep dips best ways to tone and tighten the back of the upper arms.',
                 excerciseTime: '30 times',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/jumpingjacks.gif',
+                excerciseImagePath: 'assets/images/jumpingjacks.gif',
                 excerciseName: 'jumping jacks',
                 excerciseDescription:
                     'It helps you to Jumping helps to build bone strength over time. ',
                 excerciseTime: '120 seconds',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/lateral lunges.gif',
+                excerciseImagePath: 'assets/images/lateral lunges.gif',
                 excerciseName: 'lateral lunges',
                 excerciseDescription:
                     'lateral lunges, are a type of bodyweight exercise.',
@@ -178,21 +224,21 @@ class _HomePageState extends State<HomePage3> {
                 excerciseTime: '2mins',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/Russian Twist.gif',
+                excerciseImagePath: 'assets/images/Russian Twist.gif',
                 excerciseName: 'Russian Twist',
                 excerciseDescription:
                     'The Russian twist is an effective way to build your core and shoulders.',
                 excerciseTime: '40 times',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/squats.gif',
+                excerciseImagePath: 'assets/images/squats.gif',
                 excerciseName: 'squats',
                 excerciseDescription:
                     'Squats burn calories and might help you lose weight.',
                 excerciseTime: '50 times',
               ),
               ExcerciseTile(
-                excerciseImagePath: 'lib/images/WalkingLungs.gif',
+                excerciseImagePath: 'assets/images/WalkingLungs.gif',
                 excerciseName: 'WalkingLungs',
                 excerciseDescription:
                     'Walking lunges strengthen the leg muscles.',
