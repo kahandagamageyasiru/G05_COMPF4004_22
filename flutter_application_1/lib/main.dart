@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/providers/user_provider.dart';
 import 'package:flutter_application_1/dhanish/Login, signup and admin screen/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey =
+      'pk_test_51METG3ICA2rU3MeJBVdiGDYNqmDVW1xgZuAvSIUOOwjTfeMovOyvm8JXGd1d8x1IDER8vYcSuTYzo4eJegiIGcD600Bueqh81r';
   runApp(
     MultiProvider(
       providers: [
@@ -30,6 +34,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
