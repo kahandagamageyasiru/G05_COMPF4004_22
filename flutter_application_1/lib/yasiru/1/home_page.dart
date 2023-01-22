@@ -73,9 +73,11 @@ class _HomePageState extends State<HomePage1> {
       ),
 
        drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
+        child: Container(
+          color: Colors.black,
+          child: ListView(
+            children: [
+              ListTile(
                 title: Text(
                   'Beginner Workout',
                   style: TextStyle(color: Colors.white,
@@ -139,7 +141,8 @@ class _HomePageState extends State<HomePage1> {
                 );
               },
             ),
-          ],
+            ],
+          ),
         ),
       ),
 
