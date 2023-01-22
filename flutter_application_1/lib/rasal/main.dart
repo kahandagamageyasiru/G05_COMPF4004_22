@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home.dart';
-import 'package:flutter_application_1/userdetails.dart';
+import 'home.dart';
+import 'userdetails.dart';
 
 void main() {
   runApp(const MyApp());
