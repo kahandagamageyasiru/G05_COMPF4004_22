@@ -1,10 +1,10 @@
 const express = require("express");
-const router = express.Router();
+const navidurouter = express.Router();
 const Message = require("./schema");
 
 // Get coach messaages and saving to database
 
-router.post('/message', (req, res) => {
+navidurouter.post('/message', (req, res) => {
     const newMessage = new Message({ message: req.body.message });
     newMessage.save((err) => {
       if (err) {
@@ -17,7 +17,7 @@ router.post('/message', (req, res) => {
 
 // Displaying coach messages in member UI
 
-router.get("/memberview", (req, res) => {
+navidurouter.get("/memberview", (req, res) => {
     Message.find({}, (err, messages) => {
         if (err) {
             res.status(500).send(err);
@@ -27,4 +27,4 @@ router.get("/memberview", (req, res) => {
     });
 });
 
-module.exports = router;
+module.exports = navidurouter;
