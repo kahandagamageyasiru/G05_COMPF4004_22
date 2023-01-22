@@ -64,10 +64,10 @@ class userdetailsformstate extends State<userdetailsform> {
                     ElevatedButton(
                       onPressed: () {
                         submitForm();
-                        /*Navigator.push(context, 
+                        Navigator.push(context, 
                         MaterialPageRoute(
                           builder: (context) => )
-                        )*/
+                        )
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFCB040),
