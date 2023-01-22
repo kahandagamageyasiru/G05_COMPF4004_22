@@ -12,12 +12,15 @@ class userdetailsformstate extends State<userdetailsform> {
   int weight = 0;
   int height = 0;
   int age = 0;
-
+  TextEditingController weightcontroller = TextEditingController();
+  TextEditingController heightcontroller = TextEditingController();
+  TextEditingController agecontroller = TextEditingController();
   final formdets = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
@@ -28,159 +31,190 @@ class userdetailsformstate extends State<userdetailsform> {
         centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.only(top: 16),
+        margin: const EdgeInsets.only(top: 16),
         child: Form(
           key: formdets,
           child: Column(
             children: [
-              DropdownButtonFormField(
-                decoration: InputDecoration(
-                  labelText: 'Goal',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                ),
-                iconEnabledColor: Colors.white,
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontWeight: FontWeight.bold,
-                ),
-                value: goal,
-                onChanged: (newValue) {
-                  setState(() {
-                    goal = newValue!;
-                  });
-                },
-                items: const [
-                  DropdownMenuItem(
-                    child: Text(
-                      'Daily',
-                      style: TextStyle(color: Colors.white),
+              goalContainer(),
+              const SizedBox(height: 15),
+              textFieldContainer(
+                  'Weight', "What's your weight?", weightcontroller),
+              const SizedBox(height: 15),
+              textFieldContainer(
+                  'Height', "What's your height?", heightcontroller),
+              const SizedBox(height: 15),
+              textFieldContainer('Age', "How old are you?", agecontroller),
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20,
+                        child: Icon(Icons.arrow_back),
+                      ),
                     ),
-                    value: 'Daily',
-                  ),
-                  DropdownMenuItem(
-                    child: Text(
-                      'Weekly',
-                      style: TextStyle(color: Colors.white),
+                    ElevatedButton(
+                      onPressed: () {
+                        submitForm();
+                        /*Navigator.push(context, 
+                        MaterialPageRoute(
+                          builder: (context) => )
+                        )*/
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFFCB040),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 70,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          )),
+                      child: const Text(
+                        'Next',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
-                    value: 'Weekly',
-                  ),
-                  DropdownMenuItem(
-                    child: Text(
-                      'Monthly',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    value: 'Monthly',
-                  ),
-                ],
-                dropdownColor: Colors.black,
-              ),
-              SizedBox(height: 20),
-              TextFormField(
-                style: TextStyle(color: Colors.white),
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Weight',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                ),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter weight';
-                  }
-                  return null;
-                },
-                onSaved: (value) => weight = int.parse(value!),
-              ),
-              SizedBox(height: 20),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Height',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                ),
-                style: TextStyle(color: Colors.white),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter height';
-                  }
-                  return null;
-                },
-                onSaved: (value) => height = int.parse(value!),
-              ),
-              SizedBox(height: 20),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Age',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                ),
-                style: TextStyle(color: Colors.white),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter age';
-                  }
-                  return null;
-                },
-                onSaved: (value) => age = int.parse(value!),
-              ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  submitForm();
-                  /*Navigator.push(context, 
-                  MaterialPageRoute(
-                    builder: (context) => )
-                  )*/
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFFCB040),
-                    padding: EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 70,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    )),
-                child: Text(
-                  'Next',
-                  style: TextStyle(color: Colors.black),
+                  ],
                 ),
               ),
+              const SizedBox(height: 15),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget goalContainer() {
+    return Expanded(
+      child: Column(
+        children: [
+          Center(
+            child: Text("What's your goal?",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20)),
+          ),
+          const SizedBox(height: 15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: DropdownButtonFormField(
+              decoration: InputDecoration(
+                labelText: 'Goal',
+                labelStyle: const TextStyle(color: Colors.white),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.white),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.white),
+                ),
+              ),
+              iconEnabledColor: Colors.white,
+              style: const TextStyle(
+                fontSize: 18,
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontWeight: FontWeight.bold,
+              ),
+              value: goal,
+              onChanged: (newValue) {
+                setState(() {
+                  goal = newValue!;
+                });
+              },
+              items: const [
+                DropdownMenuItem(
+                  child: Text(
+                    'Daily',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  value: 'Daily',
+                ),
+                DropdownMenuItem(
+                  child: Text(
+                    'Weekly',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  value: 'Weekly',
+                ),
+                DropdownMenuItem(
+                  child: Text(
+                    'Monthly',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  value: 'Monthly',
+                ),
+              ],
+              dropdownColor: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 0),
+          const Divider(
+            color: Colors.grey,
+            thickness: 1,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget textFieldContainer(lable, text, controller) {
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(text,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20)),
+          ),
+          Spacer(),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: TextFormField(
+              controller: controller,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: lable,
+                labelStyle: const TextStyle(color: Colors.white),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.white),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.white),
+                ),
+              ),
+              style: const TextStyle(color: Colors.white),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter ${lable.toString().toLowerCase()}';
+                }
+                return null;
+              },
+            ),
+          ),
+          SizedBox(height: 15),
+          const Divider(
+            color: Colors.grey,
+            thickness: 1,
+          )
+        ],
       ),
     );
   }
@@ -194,14 +228,18 @@ class userdetailsformstate extends State<userdetailsform> {
           headers: {'Content-Type': 'application/json'},
           body: json.encode({
             'goal': goal,
-            'weight': weight,
-            'height': height,
-            'age': age,
+            'weight': int.parse(weightcontroller.text.trim()),
+            'height': int.parse(heightcontroller.text.trim()),
+            'age': int.parse(agecontroller.text.trim()),
           }),
         );
 
         if (response.statusCode == 201) {
           print('Data saved successfully!');
+          agecontroller.clear();
+          heightcontroller.clear();
+          weightcontroller.clear();
+          setState(() {});
         } else {
           print('An error occurred while saving data: ${response.statusCode}');
         }
